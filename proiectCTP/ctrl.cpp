@@ -46,9 +46,6 @@ void ctrl::afis()
 		zona z2 = this->rz.getElem(i);
 		cout << z2 << endl;
 	}
-	cout << endl;
-	cout << endl;
-	cout << endl;
 
 }
 
