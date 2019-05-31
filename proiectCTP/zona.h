@@ -9,7 +9,7 @@ protected:
 	float pret;
 public:
 	zona();
-	/*zona(std::string den);*/ // trebe refacuta
+	zona(std::string den); // trebe refacuta
 	zona(std::string den, float pret);
 	zona(const zona& z);
 	~zona();

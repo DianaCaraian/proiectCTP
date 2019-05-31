@@ -5,11 +5,6 @@ ui::ui()
 	//nimic
 }
 
-//ui::ui(ctrl c2)
-//{
-//	this->c = c2;
-//}
-
 ui::ui(const ui& u)
 {
 	this->c = u.c;
@@ -31,12 +26,16 @@ ctrl& ui::getCtrl()
 	return this->c;
 }
 
-void ui::afisZone()
+void ui::print_bus()
 {
-	
+	for (int i = 0; i < c.getRepoBus().getDim(); i++)
+	{
+		bus b = c.getRepoBus().getElem(i);
+		std::cout << b << std::endl;
+	}
 }
 
-void ui::logare(std::string &iduser, std::string &parolauser)
+bool ui::logare(std::string &iduser, std::string &parolauser)
 {
 	std::cout << "id : ";
 	std::cin >> iduser;
@@ -54,4 +53,6 @@ void ui::logare(std::string &iduser, std::string &parolauser)
 	if (GASIT == 1)
 		std::cout << "autentificare cu succes" << std::endl;
 	else std::cout << "id sau parola incorecta" << std::endl;
+
+	return GASIT;
 }

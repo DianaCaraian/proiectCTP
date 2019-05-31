@@ -70,13 +70,16 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="listazone.in">
+    <None Include="listabilete.txt">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="listabilet.in">
+    <None Include="listazone.txt">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="listaid.in">
+    <None Include="listaid.txt">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="listabus.txt">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

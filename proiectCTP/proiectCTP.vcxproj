@@ -142,9 +142,10 @@
     <ClInclude Include="zona.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="listabilet.in" />
-    <None Include="listaid.in" />
-    <None Include="listazone.in" />
+    <None Include="listabus.txt" />
+    <None Include="listaid.txt" />
+    <None Include="listazone.txt" />
+    <None Include="listabilete.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
