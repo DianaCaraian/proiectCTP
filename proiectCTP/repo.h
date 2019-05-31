@@ -11,11 +11,11 @@ protected:
 	std::vector<T> v;
 public:
 	repo();
-	repo(T v2[]);
+	/*repo(T v2[]);*/
 	repo(const repo& r);
 	~repo();
 	repo<T>& operator=(const repo& r);
-	T getElem(int poz);
+	T& getElem(int poz);
 	int getDim();
 	void loadfile(std::string namefile);
 };
@@ -39,11 +39,11 @@ repo<T>::repo()
 	//nimic
 }
 
-template <class T>
-repo<T>::repo(T v2[])
-{
-	this->v = v2;
-}
+//template <class T>
+//repo<T>::repo(T v2[])
+//{
+//	this->v = v2;
+//}
 
 template <class T>
 repo<T>::repo(const repo& r)
@@ -65,7 +65,7 @@ repo<T>& repo<T>::operator=(const repo& r)
 }
 
 template <class T>
-T repo<T>::getElem(int poz)
+T& repo<T>::getElem(int poz)
 {
 	return this->v[poz];
 }

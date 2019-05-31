@@ -5,10 +5,10 @@ ui::ui()
 	//nimic
 }
 
-ui::ui(ctrl c2)
-{
-	this->c = c2;
-}
+//ui::ui(ctrl c2)
+//{
+//	this->c = c2;
+//}
 
 ui::ui(const ui& u)
 {
@@ -26,7 +26,7 @@ ui& ui::operator=(const ui& u)
 	return *this;
 }
 
-ctrl ui::getCtrl()
+ctrl& ui::getCtrl()
 {
 	return this->c;
 }

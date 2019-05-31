@@ -54,13 +54,13 @@ std::istream& operator>>(std::istream& is, bus& b)
 }
 
 
-std::ostream& operator<<(std::ostream& os, bus& b)
+std::ostream& operator<<(std::ostream& os,bus& b)
 {
 	os << b.destinatie.getDenumire() <<"," << b.plecare.getDenumire() <<", " <<b.data << ", " << b.nr_loc;
 	return os;
 }
 
-zona bus::getDestin()
+zona bus::getDestinatie()
 {
 	return this->destinatie;
 }
@@ -80,7 +80,7 @@ int bus::getNrLoc()
 	return this->nr_loc;
 }
 
-void bus::setDestin(zona destin)
+void bus::setDestinatie(zona destin)
 {
 	this->destinatie = destin;
 }

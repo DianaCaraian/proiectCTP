@@ -49,7 +49,7 @@ std::string user::getPassw()
 	return this->passw;
 }
 
-zona user::getBilet(int poz)
+zona& user::getBilet(int poz)
 {
 	return this->bilete[poz];
 }

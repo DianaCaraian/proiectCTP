@@ -7,26 +7,26 @@ zona::zona()
 	this->pret = 0.0;
 }
 
-
-zona::zona(std::string den)
-{
-	this->denumire = den;
-	std::ifstream fi("listazone.in");
-	bool FOUND = 0;
-	while (!fi.eof() && !FOUND)
-	{
-		std::string statie;
-		float pret2;
-		fi >> statie >> pret2;
-		if (statie == den)
-		{
-			FOUND = 1;
-			this->pret = pret2;
-		}
-			
-	}
-	fi.close();
-}
+// prea complicat si nu ii ok
+//zona::zona(std::string den)
+//{
+//	this->denumire = den;
+//	std::ifstream fi("listazone.in");
+//	bool FOUND = 0;
+//	while (!fi.eof() && !FOUND)
+//	{
+//		std::string statie;
+//		float pret2;
+//		fi >> statie >> pret2;
+//		if (statie == den)
+//		{
+//			FOUND = 1;
+//			this->pret = pret2;
+//		}
+//			
+//	}
+//	fi.close();
+//}
 
 zona::zona(std::string den, float pret)
 {
@@ -52,7 +52,7 @@ zona& zona::operator=(const zona& z)
 	return *this;
 }
 
-int zona::operator==(const zona z)
+int zona::operator==(const zona& z)
 {
 	return (this->denumire == z.denumire && this->pret == z.pret);
 }

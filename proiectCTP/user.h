@@ -13,9 +13,10 @@ public:
 	user& operator=(const user& u);
 	int operator==(const user u);
 	friend std::istream& operator>>(std::istream& is, user& u);
+	// trebe operator de scriere  , pt actualizare fisier
 	std::string getId();
 	std::string getPassw();
-	zona getBilet(int poz);
+	zona& getBilet(int poz);
 	int getDimBilete();
 	void setId(std::string id);
 	void setPassw(std::string passw);

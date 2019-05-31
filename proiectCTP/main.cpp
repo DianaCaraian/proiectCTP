@@ -14,7 +14,7 @@ void meniu(int &alege)
 
 int main()
 {
-	testFinal();
+	//testFinal();
 	ui u;
 	std::string iduser, parolauser;
 	int alege;
