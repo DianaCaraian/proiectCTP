@@ -1,3 +1,12 @@
 diana 2
 Regionala Grigorescu
 Zorilor Centru
+caraian 1
+Marasti Manastur
+paul 2
+Sannicoara Marasti
+Regionala Centru
+andrei 3
+Apahida Sannicoara
+Sannicoara Marasti
+Regionala Centru

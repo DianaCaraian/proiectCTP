@@ -1,5 +1,8 @@
-marasti 2.50
-sannicoara 3
-apahida 4
-grigorescu 2.50
-zorilor 2.50
+Marasti 2.50
+Sannicoara 3
+Apahida 4
+Grigorescu 2.50
+Zorilor 2.50
+Centru 3.50
+Regionala 2
+Manastur 2
