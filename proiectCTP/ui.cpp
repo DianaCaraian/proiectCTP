@@ -33,25 +33,25 @@ ctrl& ui::getCtrl()
 
 void ui::afisZone()
 {
-	this->c.afis();
+	
 }
 
-void ui::logare(string &iduser, string &parolauser)
+void ui::logare(std::string &iduser, std::string &parolauser)
 {
-	cout << "id : ";
-	cin >> iduser;
-	cout << "paroala : ";
-	cin >> parolauser;
+	std::cout << "id : ";
+	std::cin >> iduser;
+	std::cout << "paroala : ";
+	std::cin >> parolauser;
 	bool GASIT = 0;
-	ifstream fi("listaid.in");
+	std::ifstream fi("listaid.in");
 	while (!fi.eof() && GASIT == 0)
 	{
-		string idfisier, parolafis;
+		std::string idfisier, parolafis;
 		fi >> idfisier >> parolafis;
 		if (iduser == idfisier && parolauser == parolafis)
 			GASIT = 1;
 	}
 	if (GASIT == 1)
-		cout << "autentificare cu succes" << endl;
-	else cout << "id sau parola incorecta" << endl;
+		std::cout << "autentificare cu succes" << std::endl;
+	else std::cout << "id sau parola incorecta" << std::endl;
 }

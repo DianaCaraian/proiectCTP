@@ -22,6 +22,6 @@ public:
 	repo<bus> getRepoBus();
 	/*repo<user> getRepoUser();*/
 	/*void afis();*/	// chestia asta nu se face in CTRL
-	//void logare(string idUser);
+	
 };
 

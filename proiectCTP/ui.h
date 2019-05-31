@@ -13,6 +13,6 @@ public:
 	ui& operator=(const ui& u);
 	ctrl& getCtrl();
 	void afisZone();
-	void logare(string &iduser, string &parolauser);
+	void logare(std::string &iduser, std::string &parolauser);
 };
 
