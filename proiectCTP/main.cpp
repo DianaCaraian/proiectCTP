@@ -14,8 +14,12 @@ void meniu(int &alege)
 
 int main()
 {
-	//testFinal();
 	ui u;
+	zona a = zona("Regioasdsdasdasnala");
+	zona b = zona("Centru");
+	u.buy_tickets("diana", a, b, "20-08-2019");
+	//testFinal();
+	/*ui u;
 	std::string iduser, parolauser;
 	int alege;
 	meniu(alege);
@@ -44,7 +48,7 @@ int main()
 
 		}
 
-	}
+	}*/
 
 
 	return 0;

@@ -48,15 +48,15 @@ std::istream& operator>>(std::istream& is, bus& b)
 	is >> numezona1 >> numezona2 >> b.data >> b.nr_loc;
 	zona z1=zona(numezona1);
 	zona z2=zona(numezona2);
-	b.destinatie = z1;
-	b.plecare = z2;
+	b.destinatie = z2;
+	b.plecare = z1;
 	return is;
 }
 
 
 std::ostream& operator<<(std::ostream& os,bus& b)
 {
-	os << b.destinatie.getDenumire() <<"," << b.plecare.getDenumire() <<", " <<b.data << ", " << b.nr_loc;
+	os << b.plecare.getDenumire() << " " << b.destinatie.getDenumire() << " " << b.data << " " << b.nr_loc;
 	return os;
 }
 

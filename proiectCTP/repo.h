@@ -16,7 +16,7 @@ public:
 	~repo();
 	repo<T>& operator=(const repo& r);
 	T& getElem(int poz);
-	int getDim();
+	unsigned int getDim();
 	void loadfile(std::string namefile);
 };
 
@@ -71,7 +71,7 @@ T& repo<T>::getElem(int poz)
 }
 
 template <class T>
-int repo<T>::getDim()
+unsigned int repo<T>::getDim()
 {
 	return this->v.size();
 }

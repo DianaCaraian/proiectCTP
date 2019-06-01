@@ -10,7 +10,7 @@ zona::zona()
 zona::zona(std::string den)
 {
 	this->denumire = den;
-	std::ifstream fi("listazone.in");
+	std::ifstream fi("listazone.txt");
 	bool FOUND = 0;
 	while (!fi.eof() && !FOUND)
 	{

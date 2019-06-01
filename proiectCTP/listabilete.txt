@@ -1,12 +1,12 @@
 diana 2
-Regionala Grigorescu
-Zorilor Centru
+Regionala Grigorescu 10-08-2019 94
+Zorilor Centru 19-20-2020 130
 caraian 1
-Marasti Manastur
+Marasti Manastur 12-09-2019 100
 paul 2
-Sannicoara Marasti
-Regionala Centru
+Sannicoara Marasti 1-07-2019 90
+Regionala Centru 20-08-2019 125
 andrei 3
-Apahida Sannicoara
-Sannicoara Marasti
-Regionala Centru
+Apahida Sannicoara 14-07-2019 10
+Sannicoara Marasti 1-07-2019 90
+Regionala Centru 20-08-2019 130

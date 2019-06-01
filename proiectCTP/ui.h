@@ -15,10 +15,10 @@ public:
 	ctrl& getCtrl();
 
 	void print_bus();
-	void show_tickets();
-	void buy_tickets();
-	std::vector<bus> give_fastest_route();
-	std::vector<bus> give_cheapest_route();
+	void show_tickets(std::string id_wanted);
+	void buy_tickets(std::string id_wanted,zona& z,zona& z2,std::string date);
+	//std::vector<bus> get_fastest_route();
+	//std::vector<bus> get_cheapest_route();
 	bool logare(std::string &iduser, std::string &parolauser);
 };
 

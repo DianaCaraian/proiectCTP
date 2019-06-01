@@ -28,12 +28,98 @@ ctrl& ui::getCtrl()
 
 void ui::print_bus()
 {
-	for (int i = 0; i < c.getRepoBus().getDim(); i++)
+	for (unsigned int i = 0; i < c.getRepoBus().getDim(); i++)
 	{
 		bus b = c.getRepoBus().getElem(i);
 		std::cout << b << std::endl;
 	}
 }
+
+void ui::show_tickets(std::string id_wanted)
+{
+	std::ifstream fi("listabilete.txt");
+	bool FOUND = 0;
+	while (!fi.eof() && !FOUND)
+	{
+		std::string id;
+		int no_tickets;
+		bus b; 
+		fi >> id >> no_tickets;
+		if (id == id_wanted)
+			FOUND = 1;
+		for (int i = 1; i <= no_tickets; i++)
+		{
+			fi >> b;
+			if (FOUND == 1)
+				std::cout << b << std::endl;
+		}
+	}
+	fi.close();
+}
+
+// trebe facuta validare pe numar de locuri
+void ui::buy_tickets(std::string id_wanted,zona& z1,zona& z2,std::string date)
+{
+	// se descarca fisierul
+	std::vector <std::string> id;
+	std::vector<bus> b[100];	// matrix
+	std::ifstream fi("listabilete.txt");
+	int nr_id = 0;
+	while (!fi.eof())
+	{
+		std::string new_id;
+		fi >> new_id;
+		id.push_back(new_id);
+		int no_tickets;
+		fi >> no_tickets;
+		bus a;
+		for (int i = 1; i <= no_tickets; i++)
+		{
+			fi >> a;
+			b[nr_id].push_back(a);
+		}
+		nr_id++;
+	}
+
+	// se scad nr de locuri
+	bool FOUND=0;
+	for (int i = 0; i < nr_id && !FOUND; i++)
+		for (int j = 0; j < b[i].size() && !FOUND; j++)
+			if (b[i][j].getData() == date)
+				if (b[i][j].getDestinatie()/*.getDenumire()*/ == z2/*.getDenumire()*/)
+					if (b[i][j].getPlecare().getDenumire() == z1.getDenumire())
+					{
+						FOUND = 1;
+						b[i][j].setNrLoc(b[i][j].getNrLoc() - 1);
+					}
+
+	if (!FOUND)
+	{
+		std::cout << "biletul cautat nu exista";
+		return ;
+	}
+
+	std::ofstream fo("listabilete.txt");
+	// se incarca datele noi in fisier
+	for (int i = 0; i < nr_id; i++)
+	{
+		fo << id[i] << " " << b[i].size() << std::endl;
+		for (int j = 0; j < b[i].size(); j++)
+		{
+			fo << b[i][j] /*<< std::endl*/;
+			if (j < b[i].size() - 1 || i < nr_id-1)					// se evita aparitia ultimului endl
+				fo << std::endl;									// rezolva bugul pt cumparari multiple
+		}
+	}
+
+	std::cout << "bilet cumparat!" << std::endl;
+}
+
+//std::vector<bus> ui::get_fastest_route()
+//{
+//	std::string a="";
+//	return a;
+//}
 
 bool ui::logare(std::string &iduser, std::string &parolauser)
 {
