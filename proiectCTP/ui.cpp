@@ -90,6 +90,7 @@ bool ui::buy_tickets(std::string id_wanted,zona& z1,zona& z2,std::string date)
 				if (b[i][j].getDestinatie()/*.getDenumire()*/ == z2/*.getDenumire()*/)
 					if (b[i][j].getPlecare().getDenumire() == z1.getDenumire())
 					{
+						std::cout << "pretul biletului : " << b[i][j].getPlecare().getPret()<<" lei " << std::endl;
 						FOUND = 1;
 						b[i][j].setNrLoc(b[i][j].getNrLoc() - 1);
 					}

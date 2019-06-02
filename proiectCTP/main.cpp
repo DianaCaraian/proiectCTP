@@ -13,13 +13,13 @@ void meniu(int &alege)
 
 int main()
 {
-	ui u;
+	/*ui u;
 	zona a = zona("A");
 	zona b = zona("E");
 	u.get_fastest_route("diana",a,b,"20-08-2019");
-	/*buy_tickets("diana", a, b, "20-08-2019")*/
+	buy_tickets("diana", a, b, "20-08-2019")*/
 	//testFinal();
-	/*ui u;
+	ui u;
 	bool log;
 	std::string iduser, parolauser, decizie, data_4buy, id_4buy;
 	zona zona_plecare, zona_destinatie;
@@ -47,20 +47,31 @@ int main()
 					cout << "doriti sa mai incercati ? da/nu" << endl;
 					cin >> decizie;
 				}
-				else decizie = "nu";
+				else 
+				{
+					cout <<endl<< "doriti afisarea celei mai scurte rute ? da/nu" << endl;
+					cin >> decizie;
+					if (decizie == "da" || decizie == "DA" || decizie == "Da")
+					{
+						u.get_fastest_route(iduser, zona_plecare, zona_destinatie, data_4buy);
+					}
+					cout << endl << "doriti afisarea istoricului dumneavoastra ? da/nu" << endl;
+					cin >> decizie;
+					if (decizie == "da" || decizie == "DA" || decizie == "Da")
+					{
+						u.show_tickets(iduser);
+					}
+					decizie = "nu";
+				} 
 
 			}
-			cout << "doriti afisarea istoricului dumneavoastra ? da/nu" << endl;
-			cin >> decizie;
-			if (decizie == "da" || decizie == "DA" || decizie == "Da")
-			{
-				u.show_tickets(iduser);
-			}
+			
+			
 
 		meniu(alege);
 		}
 
-	}*/
+	}
 
 	return 0;
 }
