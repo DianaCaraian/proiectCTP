@@ -4,3 +4,15 @@ Zorilor Centru 19-20-2020 130
 Marasti Manastur 3-06-2019 100
 Sannicoara Marasti 1-07-2019 90
 Apahida Sannicoara 14-07-2019 10
+Centru Groparilor 14-01-2069 69
+Grigorescu Groparilor 14-01-2069 69
+A B 14-01-2069 69
+B C 14-01-2069 69
+C E 14-01-2069 69
+A D 14-01-2069 69
+D F 14-01-2069 69
+F E 14-01-2069 69
+A G 14-01-2069 69
+G H 14-01-2069 69
+H I 14-01-2069 69
+I E 14-01-2069 69
