@@ -15,9 +15,9 @@ int main()
 {
 	ui u;
 	zona a = zona("Apahida");
-	zona b = zona("Someseni");
+	zona b = zona("Sannicoara");
 	//u.get_fastest_route("diana",a,b,"20-08-2019");
-	u.buy_tickets("diana", a, b, "14-07-2019");
+	u.buy_tickets("diana", a, b, "20-08-2019");
 
 	//testFinal();
 	
