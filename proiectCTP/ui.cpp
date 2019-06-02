@@ -254,7 +254,7 @@ bool ui::logare(std::string &iduser, std::string &parolauser)
 {
 	std::cout << "id : ";
 	std::cin >> iduser;
-	std::cout << "paroala : ";
+	std::cout << "parola : ";
 	std::cin >> parolauser;
 	bool GASIT = false;
 	std::ifstream fi("listaid.txt");

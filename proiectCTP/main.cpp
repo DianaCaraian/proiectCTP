@@ -36,7 +36,9 @@ int main()
 		if (log == 1)
 		{
 			cout << "autentificare cu succes" << endl;
-			cout << "doriti sa cumparati un bilet ? da/nu" << endl;
+			cout << "lista autobuzelor :" << endl;
+			u.print_bus();
+			cout << endl<< "doriti sa cumparati un bilet ? da/nu" << endl;
 			cin >> decizie;
 			while (decizie == "da" || decizie == "DA" || decizie == "Da")
 			{
