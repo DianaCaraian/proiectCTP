@@ -1,7 +1,9 @@
-diana 3
+diana 5
 Regionala Grigorescu 20-08-2019 100
 Centru Grigorescu 1-07-2019 100
 Apahida Regionala 21-12-2019 98
+Apahida Sannicoara 20-08-2019 128
+Sannicoara Marasti 10-08-2019 100
 caraian 3
 Sannicoara Regionala 14-01-2019 150
 Someseni Centru 10-10-2019 140
@@ -9,9 +11,9 @@ Someseni Grigorescu 22-10-2019 150
 paul 3
 Alpinilor Est 14-01-2019 88
 Alpinilor Islazului 14-01-2019 80
-Gheorgheni Est 11-11-2019 80
+Ghiorgheni Est 11-11-2019 80
 andrei 4
 Bulgaria Est 14-07-2019 129
 Hasdeu Est 14-01-2019 120
 Alpinilor Constanta 3-06-2019 120
-Gheorgheni Hasdeu 12-12-2019 100
+Ghiorgheni Hasdeu 12-12-2019 100

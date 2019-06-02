@@ -88,7 +88,7 @@ bool ui::buy_tickets(std::string id_wanted,zona& z1,zona& z2,std::string date)
 		pos++;
 	}
 
-	c.getRepoBus().loadfile("listabus.txt");
+	//c.getRepoBus().loadfile("listabus.txt");
 
 	bool FOUND = 0;
 	bus searched_bus;
