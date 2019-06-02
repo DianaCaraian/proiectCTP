@@ -126,6 +126,7 @@
     <ClCompile Include="bus.cpp" />
     <ClCompile Include="ctrl.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="repo.cpp" />
     <ClCompile Include="teste.cpp" />
     <ClCompile Include="ui.cpp" />
     <ClCompile Include="user.cpp" />

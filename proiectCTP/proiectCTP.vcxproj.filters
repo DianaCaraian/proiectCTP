@@ -42,6 +42,9 @@
     <ClCompile Include="teste.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="repo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="repo.h">
