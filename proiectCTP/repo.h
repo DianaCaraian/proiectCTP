@@ -19,4 +19,3 @@ public:
 	int getDim();
 	void loadfile(std::string namefile);
 };
-

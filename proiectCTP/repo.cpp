@@ -1,6 +1,5 @@
 #include "repo.h"
 
-
 void repo::loadfile(std::string namefile)
 {
 	std::ifstream f(namefile);
