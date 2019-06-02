@@ -14,10 +14,10 @@ void meniu(int &alege)
 
 int main()
 {
-	ui u;
+	/*ui u;
 	zona a = zona("Regioasdsdasdasnala");
 	zona b = zona("Centru");
-	u.buy_tickets("diana", a, b, "20-08-2019");
+	u.buy_tickets("diana", a, b, "20-08-2019");*/
 	//testFinal();
 	/*ui u;
 	std::string iduser, parolauser;

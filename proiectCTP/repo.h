@@ -4,7 +4,7 @@
 #include <fstream>
 #include "bus.h"
 #include "user.h"
-#include "zona.h"
+//#include "zona.h"
 
 class repo
 {
@@ -72,5 +72,6 @@ bus& repo::getElem(int poz)
 
 int repo::getDim()
 {
-	return this->v.size();
+	int dim = this->v.size();
+	return dim;
 }
