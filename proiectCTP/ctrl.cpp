@@ -21,7 +21,7 @@ ctrl& ctrl::operator=(const ctrl& c)
 	return *this;
 }
 
-repo ctrl::getRepoBus()
+repo& ctrl::getRepoBus()
 {
 	return this->rb;
 }
