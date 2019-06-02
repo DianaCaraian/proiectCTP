@@ -1,8 +1,6 @@
 #pragma once
-#include "zona.h"
 #include "repo.h"
-#include <iostream>
-
+//#include <iostream>
 
 class ctrl
 {

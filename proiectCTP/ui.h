@@ -1,6 +1,6 @@
 #pragma once
 #include "ctrl.h"
-#include "bus.h"
+//#include "bus.h"
 
 class ui
 {
