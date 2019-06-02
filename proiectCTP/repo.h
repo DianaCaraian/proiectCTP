@@ -2,39 +2,37 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-
-template <class T>
+#include "bus.h"
+#include "user.h"
+#include "zona.h"
 
 class repo
 {
 protected:
-	std::vector<T> v;
+	std::vector<bus> v;
 public:
 	repo();
-	/*repo(T v2[]);*/
 	repo(const repo& r);
 	~repo();
-	repo<T>& operator=(const repo& r);
-	T& getElem(int poz);
-	unsigned int getDim();
+	repo& operator=(const repo& r);
+	bus& getElem(int poz);
+	int getDim();
 	void loadfile(std::string namefile);
 };
 
-template <class T>
-void repo<T>::loadfile(std::string namefile)
+void repo::loadfile(std::string namefile)
 {
 	std::ifstream f(namefile);
 	while (!f.eof())
 	{
-		T elem;
+		bus elem;
 		f >> elem;
 		this->v.push_back(elem);
 	}
 	f.close();
 }
 
-template <class T>
-repo<T>::repo()
+repo::repo()
 {
 	//nimic
 }
@@ -44,34 +42,35 @@ repo<T>::repo()
 //{
 //	this->v = v2;
 //}
+ 
 
-template <class T>
-repo<T>::repo(const repo& r)
+repo::repo(const repo& r)
 {
 	this->v = r.v;
 }
 
-template <class T>
-repo<T>::~repo()
+repo::~repo()
 {
 	//nimic
 }
 
-template <class T>
-repo<T>& repo<T>::operator=(const repo& r)
+repo& repo::operator=(const repo& r)
 {
 	this->v = r.v;
 	return *this;
 }
 
-template <class T>
-T& repo<T>::getElem(int poz)
+//bus& repo::getElem(int poz)
+//{
+//	return this->v[poz];
+//}
+
+bus& repo::getElem(int poz)
 {
 	return this->v[poz];
 }
 
-template <class T>
-unsigned int repo<T>::getDim()
+int repo::getDim()
 {
 	return this->v.size();
 }

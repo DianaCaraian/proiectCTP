@@ -9,13 +9,13 @@
 class ctrl
 {
 protected:
-	repo<bus> rb;
+	repo rb;
 public:
 	ctrl();
 	ctrl(const ctrl& c);
 	~ctrl();
 	ctrl& operator=(const ctrl& c);
-	repo<bus> getRepoBus();
+	repo getRepoBus();
 	
 };
 
