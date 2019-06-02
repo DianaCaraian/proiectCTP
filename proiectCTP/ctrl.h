@@ -11,7 +11,7 @@ public:
 	ctrl(const ctrl& c);
 	~ctrl();
 	ctrl& operator=(const ctrl& c);
-	repo getRepoBus();
+	repo& getRepoBus();
 	
 };
 

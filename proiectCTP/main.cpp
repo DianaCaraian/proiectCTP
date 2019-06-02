@@ -18,7 +18,10 @@ int main()
 	zona b = zona("E");
 	u.get_fastest_route("diana",a,b,"20-08-2019");
 	buy_tickets("diana", a, b, "20-08-2019")*/
+
 	//testFinal();
+	
+	
 	ui u;
 	bool log;
 	std::string iduser, parolauser, decizie, data_4buy, id_4buy;

@@ -29,6 +29,7 @@ ctrl& ui::getCtrl()
 
 void ui::print_bus()
 {
+	c.getRepoBus().loadfile("listabus.txt");
 	for (int i = 0; i < c.getRepoBus().getDim(); i++)
 	{
 		bus b = c.getRepoBus().getElem(i);
