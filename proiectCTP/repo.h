@@ -2,6 +2,9 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
+#include "bus.h"
+#include "user.h"
+#include "zona.h"
 
 class repo
 {
