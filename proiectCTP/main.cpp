@@ -60,7 +60,7 @@ int main()
 					{
 						u.get_fastest_route(iduser, zona_plecare, zona_destinatie, data_4buy);
 					}
-					cout << endl << "doriti afisarea istoricului dumneavoastra ? da/nu" << endl;
+					cout << endl<<endl << "doriti afisarea istoricului dumneavoastra ? da/nu" << endl;
 					cin >> decizie;
 					if (decizie == "da" || decizie == "DA" || decizie == "Da")
 					{
