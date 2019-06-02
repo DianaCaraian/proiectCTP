@@ -58,7 +58,7 @@ void ui::show_tickets(std::string id_wanted)
 }
 
 // trebe facuta validare pe numar de locuri
-void ui::buy_tickets(std::string id_wanted,zona& z1,zona& z2,std::string date)
+bool ui::buy_tickets(std::string id_wanted,zona& z1,zona& z2,std::string date)
 {
 	// se descarca fisierul
 	std::vector <std::string> id;
@@ -95,8 +95,8 @@ void ui::buy_tickets(std::string id_wanted,zona& z1,zona& z2,std::string date)
 
 	if (!FOUND)
 	{
-		std::cout << "biletul cautat nu exista";
-		return ;
+		std::cout << "biletul cautat nu exista" << std::endl;
+		return 0;
 	}
 
 	std::ofstream fo("listabilete.txt");
@@ -113,6 +113,7 @@ void ui::buy_tickets(std::string id_wanted,zona& z1,zona& z2,std::string date)
 	}
 
 	std::cout << "bilet cumparat!" << std::endl;
+	return FOUND;
 }
 
 //std::vector<bus> ui::get_fastest_route()
@@ -127,18 +128,35 @@ bool ui::logare(std::string &iduser, std::string &parolauser)
 	std::cin >> iduser;
 	std::cout << "paroala : ";
 	std::cin >> parolauser;
-	bool GASIT = 0;
-	std::ifstream fi("listaid.in");
+	bool GASIT = false;
+	std::ifstream fi("listaid.txt");
 	while (!fi.eof() && GASIT == 0)
 	{
 		std::string idfisier, parolafis;
 		fi >> idfisier >> parolafis;
 		if (iduser == idfisier && parolauser == parolafis)
-			GASIT = 1;
+			GASIT = true;
 	}
-	if (GASIT == 1)
+	/*if (GASIT == 1)
 		std::cout << "autentificare cu succes" << std::endl;
-	else std::cout << "id sau parola incorecta" << std::endl;
+	else std::cout << "id sau parola incorecta" << std::endl;*/
 
 	return GASIT;
+}
+
+void ui::read_data_4buy( zona& z1, zona& z2, std::string& date)
+{
+	/*std::cout << "dati id-ul : ";
+	std::cin >> id;*/
+	std::cout << "dati zona de plecare : ";
+	std::string nume_plecare, nume_destinatie;
+	std::cin >> nume_plecare;
+	zona read_z1 = zona(nume_plecare);
+	z1 = read_z1;
+	std::cout << "dati zona de destinatie : ";
+	std::cin >> nume_destinatie;
+	zona read_z2 = zona(nume_destinatie);
+	z2 = read_z2;
+	std::cout << "dati data : ";
+	std::cin >> date;
 }

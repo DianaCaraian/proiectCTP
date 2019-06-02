@@ -8,48 +8,54 @@ void meniu(int &alege)
 {
 	cout << "0- iesire" << endl;
 	cout << "1- login" << endl;
-	cout << "2-logout" << endl;
 	cin >> alege;
 }
 
 int main()
 {
-	ui u;
-	zona a = zona("Regioasdsdasdasnala");
-	zona b = zona("Centru");
-	u.buy_tickets("diana", a, b, "20-08-2019");
 	//testFinal();
-	/*ui u;
-	std::string iduser, parolauser;
+	ui u;
+	bool log;
+	std::string iduser, parolauser, decizie, data_4buy, id_4buy;
+	zona zona_plecare, zona_destinatie;
 	int alege;
 	meniu(alege);
 	while (alege != 0)
 	{
-		if (alege == 1)
-		{	
-			u.logare(iduser, parolauser);
-			cout << "doriti afisarea zonelor? 1-DA, 2-NU " << endl;
-			cin >> alege;
-			if (alege == 1)
-			{
-				u.afisZone();
-			}
-			meniu(alege);
-		}
-		else if (alege == 2)
+		log = u.logare(iduser, parolauser);
+		while (log != true)
 		{
-			cout << "0- iesire, 1- logare cu un alt cont" << endl;
-			cin >> alege;
-			if (alege == 1)
+			cout << "id sau parola incorecta... incercati din nou" << endl;
+			log = u.logare(iduser, parolauser);
+		}
+		if (log == 1)
+		{
+			cout << "autentificare cu succes" << endl;
+			cout << "doriti sa cumparati un bilet ? da/nu" << endl;
+			cin >> decizie;
+			while (decizie == "da" || decizie == "DA" || decizie == "Da")
 			{
-				u.logare(iduser, parolauser);
-				meniu(alege);
+				u.read_data_4buy(zona_plecare, zona_destinatie, data_4buy);
+				bool FOUND = u.buy_tickets(iduser, zona_plecare, zona_destinatie, data_4buy);
+				if (FOUND == 0)
+				{
+					cout << "doriti sa mai incercati ? da/nu" << endl;
+					cin >> decizie;
+				}
+				else decizie = "nu";
+
+			}
+			cout << "doriti afisarea istoricului dumneavoastra ? da/nu" << endl;
+			cin >> decizie;
+			if (decizie == "da" || decizie == "DA" || decizie == "Da")
+			{
+				u.show_tickets(iduser);
 			}
 
+		meniu(alege);
 		}
 
-	}*/
-
+	}
 
 	return 0;
 }
