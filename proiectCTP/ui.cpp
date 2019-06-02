@@ -62,15 +62,19 @@ void ui::show_tickets(std::string id_wanted)
 // trebe facuta validare pe numar de locuri
 bool ui::buy_tickets(std::string id_wanted,zona& z1,zona& z2,std::string date)
 {
-	// se descarca fisierul
+	// se descarca fisierul cu lista bilete
 	std::vector <std::string> id;
 	std::vector<bus> b[100];	// matrix
 	std::ifstream fi("listabilete.txt");
 	int nr_id = 0;
+	int POS_ID_WANTED;
+	int pos = 0;
 	while (!fi.eof())
 	{
 		std::string new_id;
 		fi >> new_id;
+		if (new_id == id_wanted)
+			POS_ID_WANTED = pos;
 		id.push_back(new_id);
 		int no_tickets;
 		fi >> no_tickets;
@@ -81,26 +85,37 @@ bool ui::buy_tickets(std::string id_wanted,zona& z1,zona& z2,std::string date)
 			b[nr_id].push_back(a);
 		}
 		nr_id++;
+		pos++;
 	}
 
-	// se scad nr de locuri
-	bool FOUND=0;
-	for (int i = 0; i < nr_id && !FOUND; i++)
-		for (int j = 0; j < b[i].size() && !FOUND; j++)
-			if (b[i][j].getData() == date)
-				if (b[i][j].getDestinatie()/*.getDenumire()*/ == z2/*.getDenumire()*/)
-					if (b[i][j].getPlecare().getDenumire() == z1.getDenumire())
+	c.getRepoBus().loadfile("listabus.txt");
+
+	bool FOUND = 0;
+	bus searched_bus;
+	for (int i=0;i<c.getRepoBus().getDim() && !FOUND;i++)
+		if (c.getRepoBus().getElem(i).getPlecare()==z1)
+			if (c.getRepoBus().getElem(i).getDestinatie() == z2)
+				if (c.getRepoBus().getElem(i).getData() == date)
+				{
+					if (c.getRepoBus().getElem(i).getNrLoc() <= 0)
 					{
-						std::cout << "pretul biletului : " << b[i][j].getPlecare().getPret()<<" lei " << std::endl;
-						FOUND = 1;
-						b[i][j].setNrLoc(b[i][j].getNrLoc() - 1);
+						std::cout << "nu mai exista locuri pentru cursa selectata" << std::endl;
+						return 0;
 					}
+					searched_bus = c.getRepoBus().getElem(i);
+					std::cout << "pretul biletului : " << c.getRepoBus().getElem(i).getPlecare().getPret() << " lei " << std::endl;
+					FOUND = 1;
+					c.getRepoBus().getElem(i).setNrLoc(c.getRepoBus().getElem(i).getNrLoc() - 1);
+				}
 
 	if (!FOUND)
 	{
 		std::cout << "biletul cautat nu exista" << std::endl;
 		return 0;
 	}
+
+	// modificam in lista bilete de la useri
+	b[POS_ID_WANTED].push_back(searched_bus);
 
 	std::ofstream fo("listabilete.txt");
 	// se incarca datele noi in fisier
@@ -113,6 +128,16 @@ bool ui::buy_tickets(std::string id_wanted,zona& z1,zona& z2,std::string date)
 			if (j < b[i].size() - 1 || i < nr_id-1)					// se evita aparitia ultimului endl
 				fo << std::endl;									// rezolva bugul pt cumparari multiple
 		}															// care apare din cauza fi.eof()
+	}
+
+	std::ofstream fo2("listabus.txt");
+	// se incarca datele noi in fisier
+	for (int i = 0; i < c.getRepoBus().getDim(); i++)
+	{
+		bus b= c.getRepoBus().getElem(i);
+		fo2 << b;
+		if (i < c.getRepoBus().getDim() - 1)
+			fo2 << std::endl;
 	}
 
 	std::cout << "bilet cumparat!" << std::endl;

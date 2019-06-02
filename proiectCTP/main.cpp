@@ -13,15 +13,16 @@ void meniu(int &alege)
 
 int main()
 {
-	/*ui u;
-	zona a = zona("A");
-	zona b = zona("E");
-	u.get_fastest_route("diana",a,b,"20-08-2019");
-	buy_tickets("diana", a, b, "20-08-2019")*/
+	ui u;
+	zona a = zona("Apahida");
+	zona b = zona("Someseni");
+	//u.get_fastest_route("diana",a,b,"20-08-2019");
+	u.buy_tickets("diana", a, b, "14-07-2019");
 
 	//testFinal();
 	
-	
+
+	/*
 	ui u;
 	bool log;
 	std::string iduser, parolauser, decizie, data_4buy, id_4buy;
@@ -76,7 +77,7 @@ int main()
 		meniu(alege);
 		}
 
-	}
+	}*/
 
 	return 0;
 }

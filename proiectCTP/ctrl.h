@@ -14,4 +14,3 @@ public:
 	repo& getRepoBus();
 	
 };
-
