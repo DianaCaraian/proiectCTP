@@ -14,10 +14,10 @@ public:
 	ctrl& getCtrl();
 
 	void print_bus();
-	void show_tickets(std::string id_wanted);
-	bool buy_tickets(std::string id_wanted,zona& z,zona& z2,std::string date);
-	void get_fastest_route(std::string id_wanted, zona& z, zona& z2, std::string date);
-	bool logare(std::string &iduser, std::string &parolauser);
-	void read_data_4buy(zona& z1, zona& z2, std::string& date);
+	void show_tickets(string id_wanted);
+	bool buy_tickets(string id_wanted, zona& z, zona& z2, string date);
+	void get_fastest_route(string id_wanted, zona& z, zona& z2);
+	bool logare(string& iduser, string& parolauser);
+	void read_data_buy(zona& z1, zona& z2, string& date);
+	void read_data_route(zona& z1, zona& z2);
 };
-

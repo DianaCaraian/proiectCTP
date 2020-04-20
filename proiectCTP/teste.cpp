@@ -9,7 +9,7 @@
 
 using namespace std;
 
-
+// functie pentru testarea functiilor din clasa "zona"
 void testZona()
 {
 	zona z1 = zona();
@@ -36,6 +36,7 @@ void testZona()
 	cout << "teste zona" << endl;
 }
 
+// functie pentru testarea functiilor din clasa "bus"
 void testBus()
 {
 	bus b1 = bus();
@@ -73,6 +74,7 @@ void testBus()
 	cout << "teste autobuz" << endl;
 }
 
+// functie pentru testarea functiilor din clasa "repo"
 void testRepo()
 {
 	zona z1 = zona("floresti", 5);
@@ -96,6 +98,8 @@ void testRepo()
 	assert(rr3.getDim() == 0);
 	cout << "teste repo" << endl;
 }
+
+// functie pentru testarea functiilor din clasa "user"
 void testUser()
 {
 	user u1 = user();
@@ -116,6 +120,7 @@ void testUser()
 	cout << "teste user" << endl;
 }
 
+// functie pentru apelarea tuturor testelor
 void testFinal()
 {
 	testZona();

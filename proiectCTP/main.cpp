@@ -4,7 +4,8 @@
 
 using namespace std;
 
-void meniu(int &alege)
+// functie pentru afisarea meniului si citirea alegerii
+void meniu(int& alege)
 {
 	cout << "0- iesire" << endl;
 	cout << "1- login" << endl;
@@ -14,10 +15,10 @@ void meniu(int &alege)
 int main()
 {
 	//testFinal();
-	
+
 	ui u;
 	bool log;
-	std::string iduser, parolauser, decizie, data_4buy, data_4info ;
+	string iduser, parolauser, decizie, data_buy, data_info;
 	zona zona_plecare, zona_destinatie, z_plecare_info, z_destinatie_info;
 	int alege;
 	meniu(alege);
@@ -38,29 +39,29 @@ int main()
 			cin >> decizie;
 			if (decizie == "da" || decizie == "DA" || decizie == "Da")
 			{
-				u.read_data_4buy(z_plecare_info, z_destinatie_info, data_4info);
-				u.get_fastest_route(iduser, z_plecare_info, z_destinatie_info, data_4info);
-				
+				u.read_data_route(z_plecare_info, z_destinatie_info);
+				u.get_fastest_route(iduser, z_plecare_info, z_destinatie_info);
+
 			}
-			
+
 			cout << endl << endl << "doriti sa cumparati un bilet ? da/nu" << endl;
 			cin >> decizie;
 			if (decizie == "da" || decizie == "DA" || decizie == "Da")
 			{
 				int nr_bilete;
-				cout << "dati numarul de bilete : " << endl;
+				cout << "dati numarul de bilete : ";
 				cin >> nr_bilete;
 				for (int i = 1; i <= nr_bilete; i++)
 				{
-					u.read_data_4buy(zona_plecare, zona_destinatie, data_4buy);
-					bool FOUND = u.buy_tickets(iduser, zona_plecare, zona_destinatie, data_4buy);
+					u.read_data_buy(zona_plecare, zona_destinatie, data_buy);
+					bool FOUND = u.buy_tickets(iduser, zona_plecare, zona_destinatie, data_buy);
 					while (FOUND == 0)
 					{
 						cout << "incercati din nou ... " << endl;
-						u.read_data_4buy(zona_plecare, zona_destinatie, data_4buy);
-						bool FOUND = u.buy_tickets(iduser, zona_plecare, zona_destinatie, data_4buy);
+						u.read_data_buy(zona_plecare, zona_destinatie, data_buy);
+						bool FOUND = u.buy_tickets(iduser, zona_plecare, zona_destinatie, data_buy);
 					}
-					
+
 				}
 			}
 			cout << endl << endl << "doriti afisarea istoricului dumneavoastra ? da/nu" << endl;
@@ -69,7 +70,8 @@ int main()
 			{
 				u.show_tickets(iduser);
 			}
-		meniu(alege);
+
+			meniu(alege);
 		}
 	}
 	return 0;

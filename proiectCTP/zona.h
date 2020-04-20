@@ -2,25 +2,26 @@
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 class zona
 {
 protected:
-	std::string denumire;
+	string denumire;
 	float pret;
 public:
 	zona();
-	zona(std::string den); // trebe refacuta
-	zona(std::string den, float pret);
+	zona(string den); // trebe refacuta
+	zona(string den, float pret);
 	zona(const zona& z);
 	~zona();
 	zona& operator=(const zona& z);
 	int operator==(const zona& z);	// ai uitat sa pui &, l-am pus eu
-	friend std::istream& operator>>(std::istream& is, zona& z);
-	friend std::ostream& operator<<(std::ostream& os, const zona& z);
+	friend istream& operator>>(istream& is, zona& z);
+	friend ostream& operator<<(ostream& os, const zona& z);
 
-	std::string getDenumire();
+	string getDenumire();
 	float getPret();
-	void setDenumire(std::string den);
+	void setDenumire(string den);
 	void setPret(float pret);
 };
-

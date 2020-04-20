@@ -1,6 +1,5 @@
 #pragma once
 #include "repo.h"
-//#include <iostream>
 
 class ctrl
 {
@@ -12,5 +11,5 @@ public:
 	~ctrl();
 	ctrl& operator=(const ctrl& c);
 	repo& getRepoBus();
-	
+
 };

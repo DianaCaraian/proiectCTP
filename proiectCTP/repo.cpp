@@ -1,8 +1,9 @@
 #include "repo.h"
 
-void repo::loadfile(std::string namefile)
+// functie pentru citirea din fisier a unui element de tip "bus"
+void repo::loadfile(string namefile)
 {
-	std::ifstream f(namefile);
+	ifstream f(namefile);
 	while (!f.eof())
 	{
 		bus elem;
@@ -12,37 +13,38 @@ void repo::loadfile(std::string namefile)
 	f.close();
 }
 
+// constructorul fara parametrii
 repo::repo()
 {
 	//nimic
 }
 
+// constructorul de copiere
 repo::repo(const repo& r)
 {
 	this->v = r.v;
 }
 
+// destructorul
 repo::~repo()
 {
 	//nimic
 }
 
+// suprascrierea operatorului "="
 repo& repo::operator=(const repo& r)
 {
 	this->v = r.v;
 	return *this;
 }
 
-//bus& repo::getElem(int poz)
-//{
-//	return this->v[poz];
-//}
-
+// functie care returneaza elementul de pe pozitia "poz"
 bus& repo::getElem(int poz)
 {
 	return this->v[poz];
 }
 
+// functie care returneaza dimensiunea vectorului
 int repo::getDim()
 {
 	int dim = this->v.size();

@@ -1,26 +1,26 @@
+#pragma once
 #include "zona.h"
 #include <vector>
 
 class user
 {
 protected:
-	std::string id, passw;
-	std::vector<zona> bilete;
+	string id, passw;
+	vector<zona> bilete;
 public:
 	user();
 	user(const user& u);
 	~user();
 	user& operator=(const user& u);
 	int operator==(const user u);
-	friend std::istream& operator>>(std::istream& is, user& u);
+	friend istream& operator>>(istream& is, user& u);
 	// trebe operator de scriere  , pt actualizare fisier
-	std::string getId();
-	std::string getPassw();
+	string getId();
+	string getPassw();
 	zona& getBilet(int poz);
 	int getDimBilete();
-	void setId(std::string id);
-	void setPassw(std::string passw);
+	void setId(string id);
+	void setPassw(string passw);
 	void setBilet(int poz, zona z);
-	
 
 };

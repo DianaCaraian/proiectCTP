@@ -1,5 +1,6 @@
 #include "user.h"
 
+// constructorul fara parametrii
 user::user()
 {
 	this->id = "";
@@ -7,6 +8,7 @@ user::user()
 
 }
 
+// constructorul cu parametrii
 user::user(const user& u)
 {
 	this->id = u.id;
@@ -14,11 +16,13 @@ user::user(const user& u)
 	this->bilete = u.bilete;
 }
 
+// destructorul
 user::~user()
 {
 	//nimic
 }
 
+// suprascrierea operatorului "="
 user& user::operator=(const user& u)
 {
 	this->id = u.id;
@@ -27,24 +31,25 @@ user& user::operator=(const user& u)
 	return *this;
 }
 
+// suprascrierea operatorului "=="
 int user::operator==(const user u)
 {
-	//for (int i = 0; i < this->bilete.size(); i++)
-	return(this->id == u.id && this->passw == u.passw);//&& this->bilete[i].getDenumire() == u.bilete[i].getDenumire() && this->bilete[i].getPret() == u.bilete[i].getPret());
+	return(this->id == u.id && this->passw == u.passw);
 }
 
-std::istream& operator>>(std::istream& is, user& u)
+// suprascrierea operatorului de citire pentru atributele din clasa
+istream& operator>>(istream& is, user& u)
 {
 	is >> u.id >> u.passw;
 	return is;
 }
 
-std::string user::getId()
+string user::getId()
 {
 	return this->id;
 }
 
-std::string user::getPassw()
+string user::getPassw()
 {
 	return this->passw;
 }
@@ -59,12 +64,12 @@ int user::getDimBilete()
 	return this->bilete.size();
 }
 
-void user::setId(std::string id)
+void user::setId(string id)
 {
 	this->id = id;
 }
 
-void user::setPassw(std::string passw)
+void user::setPassw(string passw)
 {
 	this->passw = passw;
 }
