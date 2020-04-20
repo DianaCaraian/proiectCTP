@@ -13,15 +13,7 @@ void meniu(int &alege)
 
 int main()
 {
-	//ui u;
-	//zona a = zona("Apahida");
-	//zona b = zona("Someseni");
-	////u.get_fastest_route("diana",a,b,"20-08-2019");
-	//u.buy_tickets("paul", a, b, "14-07-2019");
-
-	testFinal();
-	
-
+	//testFinal();
 	
 	ui u;
 	bool log;
@@ -77,12 +69,8 @@ int main()
 			{
 				u.show_tickets(iduser);
 			}
-			
-
 		meniu(alege);
 		}
-
 	}
-
 	return 0;
 }

@@ -17,13 +17,6 @@ repo::repo()
 	//nimic
 }
 
-//template <class T>
-//repo<T>::repo(T v2[])
-//{
-//	this->v = v2;
-//}
-
-
 repo::repo(const repo& r)
 {
 	this->v = r.v;
